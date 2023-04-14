@@ -9,7 +9,6 @@
   <script type="text/javascript" src="libs/vue/vue.js"></script>
   <script type="text/javascript" src="libs/axios/axios.js"></script>
   <script type="text/javascript" src="users.js"></script>
-  <script src="app.js"></script>
 </head>
 
 <body>
@@ -24,29 +23,31 @@
       </li>
     </ul>
 
+    <div class="centered">
+      <div class="deleteCL">
+        <input class="deleteIndex" v-model="deleteIndex" placeholder="Index">
+        <button class="deleteButton" v-on:click="deleteFun()">Delete</button>  
+      </div>
+
+      <div class="deleteCL">
+        <input class="insertName" v-model="insertName" placeholder="name">
+        <input class="insertCity" v-model="insertCity" placeholder="city">
+        <button class="insertButton" v-on:click="insertFun()">Insert</button>  
+      </div>
+
+      <div class="deleteCL">
+        <input class="updateName" v-model="updateName" placeholder="name">
+        <input class="updateCity" v-model="updateCity" placeholder="city">
+        <button class="updateButton" v-on:click="updateFun()">Update</button>  
+        <input class="updateIndex" v-model="updateIndex" placeholder="index">
+      </div>
+
+
+    </div>
+
   </div>
-  
-  <div class="centered">
-    <div class="deleteCL">
-      <input class="deleteIndex" v-model="deleteIndex" placeholder="Index">
-      <div class="output">#  {{ deleteIndex }} #</div>
-      <button class="deleteButton" v-on:click="delete()">Delete</button>  
-    </div>
 
-    <div class="Insert">
-      <input class="insertName" v-model="insertName" placeholder="Name">
-      <input class="insertCity" v-model="insertCity" placeholder="City">
-      <button class="insertButton" v-on:click="insertUser">Delete</button>  
-    </div>
-
-    <div class="deleteCL">
-      <input class="updateIndex" v-model="updateIndex" placeholder="Index">
-      <button class="updateButton" v-on:click="update()">Delete</button>  
-    </div>
-  </div>
-
-
-
+  <script src="app.js"></script>
 </body>
 
 </html>

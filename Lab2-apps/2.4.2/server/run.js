@@ -20,6 +20,15 @@ api.delete('/users/:index', function(request, response) {
   response.json('User with index ' + request.params.index + ' was deleted');
 });
 
+api.put('/users/update/', function(request, response) {
+
+  index=Number(request.body.index);
+  users[index].name = request.body.name;
+  users[index].city = request.body.city;
+  response.json('User with index ' + request.body.index + ' was updated: '+ users[index].name);
+
+});
+
 api.listen(3000, function(){
   console.log('CORS-enabled web server is listening on port 3000...');
 });
